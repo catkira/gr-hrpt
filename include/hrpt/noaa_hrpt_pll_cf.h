@@ -40,6 +40,10 @@ namespace gr {
       typedef std::shared_ptr<noaa_hrpt_pll_cf> sptr;
 
       static sptr make(float alpha, float beta, float max_offset);
+      
+      virtual int work(int noutput_items,
+		       gr_vector_const_void_star &input_items,
+		       gr_vector_void_star &output_items);      
 
       virtual void set_alpha(float alpha) = 0;
       virtual void set_beta(float beta) = 0;

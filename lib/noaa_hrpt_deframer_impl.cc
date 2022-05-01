@@ -45,8 +45,8 @@ namespace gr {
 
     noaa_hrpt_deframer_impl::noaa_hrpt_deframer_impl()
       : block("noaa_hrpt_deframer",
-		 io_signature::make(1, 1, sizeof(char)),
-		 io_signature::make(1, 1, sizeof(short)))
+		 gr::io_signature::make(1, 1, sizeof(char)),
+		 gr::io_signature::make(1, 1, sizeof(short)))
     {
       set_output_multiple(6); // room for writing full sync when received
       d_mid_bit = true;

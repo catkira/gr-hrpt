@@ -54,8 +54,8 @@ noaa_hrpt_pll_cf::make(float alpha, float beta, float max_offset)
 
 noaa_hrpt_pll_cf_impl::noaa_hrpt_pll_cf_impl(float alpha, float beta, float max_offset)
     : sync_block("noaa_hrpt_pll_cf",
-                 io_signature::make(1, 1, sizeof(gr_complex)),
-                 io_signature::make(1, 1, sizeof(float))),
+                 gr::io_signature::make(1, 1, sizeof(gr_complex)),
+                 gr::io_signature::make(1, 1, sizeof(float))),
       d_alpha(alpha), d_beta(beta), d_max_offset(max_offset),
       d_phase(0.0), d_freq(0.0)
 {

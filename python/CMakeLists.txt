@@ -26,6 +26,8 @@ if(NOT PYTHONINTERP_FOUND)
     return()
 endif()
 
+add_subdirectory(bindings)
+
 ########################################################################
 # Install python sources
 ########################################################################
@@ -41,5 +43,5 @@ GR_PYTHON_INSTALL(
 include(GrTest)
 
 set(GR_TEST_TARGET_DEPS gnuradio-hrpt)
-set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
+#set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
 GR_ADD_TEST(qa_fengyun_diff_decoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_fengyun_diff_decoder.py)

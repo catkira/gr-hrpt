@@ -60,8 +60,8 @@ namespace gr {
 
     noaa_hrpt_decoder_impl::noaa_hrpt_decoder_impl(bool verbose, bool output_files)
       : sync_block("noaa_hrpt_decoder",
-		      io_signature::make(1, 1, sizeof(short)),
-		      io_signature::make(0, 0, 0)),
+		      gr::io_signature::make(1, 1, sizeof(short)),
+		      gr::io_signature::make(0, 0, 0)),
 	d_verbose(verbose),
 	d_output_files(output_files),
 	d_word_num(0),
