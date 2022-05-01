@@ -37,7 +37,7 @@ namespace gr {
     {
     public:
       // gr::hrpt::noaa_hrpt_pll_cf::sptr
-      typedef boost::shared_ptr<noaa_hrpt_pll_cf> sptr;
+      typedef std::shared_ptr<noaa_hrpt_pll_cf> sptr;
 
       static sptr make(float alpha, float beta, float max_offset);
 

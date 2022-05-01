@@ -35,7 +35,7 @@ namespace gr {
     class HRPT_API viterbi_fengyun_decoder : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<viterbi_fengyun_decoder> sptr;
+      typedef std::shared_ptr<viterbi_fengyun_decoder> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of hrpt::viterbi_fengyun_decoder.

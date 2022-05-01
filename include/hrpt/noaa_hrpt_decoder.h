@@ -37,7 +37,7 @@ namespace gr {
     {
     public:
       // gr::hrpt::noaa_hrpt_decoder::sptr
-      typedef boost::shared_ptr<noaa_hrpt_decoder> sptr;
+      typedef std::shared_ptr<noaa_hrpt_decoder> sptr;
 
       /*!
        * \brief Make NOAA HRPT Decoder

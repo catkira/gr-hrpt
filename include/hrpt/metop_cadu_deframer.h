@@ -35,7 +35,7 @@ namespace gr {
     class HRPT_API metop_cadu_deframer : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<metop_cadu_deframer> sptr;
+      typedef std::shared_ptr<metop_cadu_deframer> sptr;
 
       /*!
        * \brief Return a shared_ptr to a new instance of hrpt::metop_cadu_deframer.
