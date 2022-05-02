@@ -34,7 +34,7 @@ void bind_noaa_hrpt_decoder(py::module& m)
 
 
     py::class_<noaa_decoder,
-        std::shared_ptr<noaa_decoder>>(m, "noaa_decoder", D(noaa_decoder))
+        std::shared_ptr<noaa_decoder>>(m, "noaa_hrpt_decoder", D(noaa_decoder))
 
         .def(py::init(&noaa_decoder::make),
            py::arg("verbose"),

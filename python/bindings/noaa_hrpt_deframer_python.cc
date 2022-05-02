@@ -34,7 +34,7 @@ void bind_noaa_hrpt_deframer(py::module& m)
 
 
     py::class_<noaa_deframer,
-        std::shared_ptr<noaa_deframer>>(m, "noaa_deframer", D(noaa_deframer))
+        std::shared_ptr<noaa_deframer>>(m, "noaa_hrpt_deframer", D(noaa_deframer))
 
         .def(py::init(&noaa_deframer::make),
            D(noaa_deframer,make)

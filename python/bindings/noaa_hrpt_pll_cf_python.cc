@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(noaa_hrpt_pll_cf.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(3442a9fbaf5be2fbcee49cf04c227146)                     */
+/* BINDTOOL_HEADER_FILE_HASH(ead94055c1c2d984ca1b6bc409aa0a54)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -45,15 +45,6 @@ void bind_noaa_hrpt_pll_cf(py::module& m)
         
 
 
-
-
-        
-        .def("work",&noaa_hrpt_pll_cf::work,       
-            py::arg("noutput_items"),
-            py::arg("input_items"),
-            py::arg("output_items"),
-            D(noaa_hrpt_pll_cf,work)
-        )
 
 
         

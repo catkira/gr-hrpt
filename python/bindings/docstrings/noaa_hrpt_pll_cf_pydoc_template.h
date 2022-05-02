@@ -28,9 +28,6 @@
  static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_make = R"doc()doc";
 
 
- static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_work = R"doc()doc";
-
-
  static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_set_alpha = R"doc()doc";
 
 
