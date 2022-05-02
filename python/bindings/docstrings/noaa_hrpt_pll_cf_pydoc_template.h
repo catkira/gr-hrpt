@@ -16,9 +16,27 @@
 
 
  
- static const char *__doc_gr_hrpt_noaa_pll_cf = R"doc()doc";
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf = R"doc()doc";
 
 
- static const char *__doc_gr_hrpt_noaa_pll_cf_make = R"doc()doc";
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_noaa_hrpt_pll_cf_0 = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_noaa_hrpt_pll_cf_1 = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_make = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_work = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_set_alpha = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_set_beta = R"doc()doc";
+
+
+ static const char *__doc_gr_hrpt_noaa_hrpt_pll_cf_set_max_offset = R"doc()doc";
 
   

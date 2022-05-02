@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(noaa_hrpt_pll_cf.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(abec322ff74001e621f55f9e29f0e9b6)                     */
+/* BINDTOOL_HEADER_FILE_HASH(3442a9fbaf5be2fbcee49cf04c227146)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -30,21 +30,51 @@ namespace py = pybind11;
 void bind_noaa_hrpt_pll_cf(py::module& m)
 {
 
-    using noaa_pll_cf    = gr::hrpt::noaa_hrpt_pll_cf;
+    using noaa_hrpt_pll_cf    = ::gr::hrpt::noaa_hrpt_pll_cf;
 
 
-    py::class_<noaa_pll_cf,
-        std::shared_ptr<noaa_pll_cf>>(m, "noaa_pll_cf", D(noaa_pll_cf))
+    py::class_<noaa_hrpt_pll_cf, gr::sync_block, gr::block, gr::basic_block,
+        std::shared_ptr<noaa_hrpt_pll_cf>>(m, "noaa_hrpt_pll_cf", D(noaa_hrpt_pll_cf))
 
-        .def(py::init(&noaa_pll_cf::make),
+        .def(py::init(&noaa_hrpt_pll_cf::make),
            py::arg("alpha"),
            py::arg("beta"),
            py::arg("max_offset"),
-           D(noaa_pll_cf,make)
+           D(noaa_hrpt_pll_cf,make)
         )
         
 
 
+
+
+        
+        .def("work",&noaa_hrpt_pll_cf::work,       
+            py::arg("noutput_items"),
+            py::arg("input_items"),
+            py::arg("output_items"),
+            D(noaa_hrpt_pll_cf,work)
+        )
+
+
+        
+        .def("set_alpha",&noaa_hrpt_pll_cf::set_alpha,       
+            py::arg("alpha"),
+            D(noaa_hrpt_pll_cf,set_alpha)
+        )
+
+
+        
+        .def("set_beta",&noaa_hrpt_pll_cf::set_beta,       
+            py::arg("beta"),
+            D(noaa_hrpt_pll_cf,set_beta)
+        )
+
+
+        
+        .def("set_max_offset",&noaa_hrpt_pll_cf::set_max_offset,       
+            py::arg("max_offset"),
+            D(noaa_hrpt_pll_cf,set_max_offset)
+        )
 
         ;
 

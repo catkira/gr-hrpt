@@ -35,20 +35,21 @@ list(APPEND gr_hrpt_sources
     fengyun_diff_decoder_impl.cc
 )
 
+
+set(gr_hrpt_sources "${gr_hrpt_sources}" PARENT_SCOPE)
+if(NOT gr_hrpt_sources)
+    MESSAGE(STATUS "No C++ sources... skipping lib/")
+    return()
+endif(NOT gr_hrpt_sources)
+
 #-pthread Adds support for multithreading with the pthreads library.
 #This option sets flags for both the preprocessor and linker. (man gcc)
 if(CMAKE_COMPILER_IS_GNUCXX)
     list(APPEND Boost_LIBRARIES -pthread)
 endif()
 
-MACRO (APPEND_LIB_LIST)
-    SET (gr_hrpt_libs "${gr_hrpt_libs};${ARGN}" CACHE INTERNAL "lib list")
-ENDMACRO(APPEND_LIB_LIST)
-
-set(gr_hrpt_libs "" CACHE INTERNAL "lib that accumulates link targets")
-
-add_library(gnuradio-hrpt SHARED)
-APPEND_LIB_LIST(${Boost_LIBRARIES} gnuradio::gnuradio-runtime)
+add_library(gnuradio-hrpt SHARED ${gr_hrpt_sources})
+target_link_libraries(gnuradio-hrpt gnuradio::gnuradio-runtime ${Boost_LIBRARIES})
 target_include_directories(gnuradio-hrpt
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
     PUBLIC ${Boost_INCLUDE_DIRS}
@@ -62,73 +63,6 @@ if(APPLE)
         INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib"
     )
 endif(APPLE)
-
-########################################################################
-# Setup defines for high resolution timing
-########################################################################
-message(STATUS "")
-message(STATUS "Configuring high resolution timing...")
-include(CheckCXXSourceCompiles)
-
-set(CMAKE_REQUIRED_LIBRARIES -lrt)
-CHECK_CXX_SOURCE_COMPILES("
-    #include <ctime>
-    int main(){
-        timespec ts;
-        return clock_gettime(CLOCK_MONOTONIC, &ts);
-    }
-    " HAVE_CLOCK_GETTIME
-)
-unset(CMAKE_REQUIRED_LIBRARIES)
-
-include(CheckCXXSourceCompiles)
-CHECK_CXX_SOURCE_COMPILES("
-    #include <mach/mach_time.h>
-    int main(){
-        mach_timebase_info_data_t info;
-        mach_timebase_info(&info);
-        mach_absolute_time();
-        return 0;
-    }
-    " HAVE_MACH_ABSOLUTE_TIME
-)
-
-CHECK_CXX_SOURCE_COMPILES("
-    #include <Windows.h>
-    int main(){
-        LARGE_INTEGER value;
-        QueryPerformanceCounter(&value);
-        QueryPerformanceFrequency(&value);
-        return 0;
-    }
-    " HAVE_QUERY_PERFORMANCE_COUNTER
-)
-
-if(HAVE_CLOCK_GETTIME)
-    message(STATUS "  High resolution timing supported through clock_gettime.")
-    set(TIME_SPEC_DEFS HAVE_CLOCK_GETTIME)
-    APPEND_LIB_LIST( "-lrt")
-elseif(HAVE_MACH_ABSOLUTE_TIME)
-    message(STATUS "  High resolution timing supported through mach_absolute_time.")
-    set(TIME_SPEC_DEFS HAVE_MACH_ABSOLUTE_TIME)
-elseif(HAVE_QUERY_PERFORMANCE_COUNTER)
-    message(STATUS "  High resolution timing supported through QueryPerformanceCounter.")
-    set(TIME_SPEC_DEFS HAVE_QUERY_PERFORMANCE_COUNTER)
-else()
-    message(STATUS "  High resolution timing supported through microsec_clock.")
-    set(TIME_SPEC_DEFS HAVE_MICROSEC_CLOCK)
-endif()
-
-set_source_files_properties(
-    time_spec.cc
-    PROPERTIES COMPILE_DEFINITIONS "${TIME_SPEC_DEFS}"
-)
-
-########################################################################
-# Finalize target
-########################################################################
-set_target_properties(gnuradio-hrpt PROPERTIES SOURCES "${gr_hrpt_sources}")
-target_link_libraries(gnuradio-hrpt ${gr_hrpt_libs})
 
 
 ########################################################################

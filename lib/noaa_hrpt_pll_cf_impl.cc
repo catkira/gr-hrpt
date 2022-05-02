@@ -24,8 +24,8 @@
 #include "config.h"
 #endif
 
-#include "noaa_hrpt_pll_cf_impl.h"
 #include <gnuradio/io_signature.h>
+#include "noaa_hrpt_pll_cf_impl.h"
 #include <gnuradio/math.h>
 #include <gnuradio/sincos.h>
 

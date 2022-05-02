@@ -29,7 +29,6 @@
  * for every possible received symbol value
  *
  */
-
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -41,6 +40,8 @@
 //#define notdef
 #include <stdlib.h>
 #include <stdio.h>
+
+#define __USE_MISC 1 // for M_SQRT2 and M_LOG2E
 #include <math.h>
 
 /* Normal function integrated from -Inf to x. Range: 0-1 */

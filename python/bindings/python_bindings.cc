@@ -21,13 +21,13 @@ namespace py = pybind11;
 // Please do not delete
 /**************************************/
 // BINDING_FUNCTION_PROTOTYPES(
-    void bind_fengyun_diff_decoder_python(py::module& m);
-    void bind_metop_cadu_deframer_python(py::module& m);
-    void bind_noaa_hrpt_decoder_python(py::module& m);
-    void bind_noaa_hrpt_deframer_python(py::module& m);
-    void bind_noaa_hrpt_pll_cf_python(py::module& m);
-    void bind_viterbi_fengyun_decoder_python(py::module& m);
-    void bind_viterbi_metop_decoder_python(py::module& m);
+    void bind_fengyun_diff_decoder(py::module& m);
+    void bind_metop_cadu_deframer(py::module& m);
+    void bind_noaa_hrpt_decoder(py::module& m);
+    void bind_noaa_hrpt_deframer(py::module& m);
+    void bind_noaa_hrpt_pll_cf(py::module& m);
+    void bind_viterbi_fengyun_decoder(py::module& m);
+    void bind_viterbi_metop_decoder(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -56,12 +56,12 @@ PYBIND11_MODULE(hrpt_python, m)
     // Please do not delete
     /**************************************/
     // BINDING_FUNCTION_CALLS(
-    bind_fengyun_diff_decoder_python(m);
-    bind_metop_cadu_deframer_python(m);
-    bind_noaa_hrpt_decoder_python(m);    
-    bind_noaa_hrpt_deframer_python(m);    
-    bind_noaa_hrpt_pll_cf_python(m);    
-    bind_viterbi_fengyun_decoder_python(m);    
-    bind_viterbi_metop_decoder_python(m);    
+    bind_fengyun_diff_decoder(m);
+    bind_metop_cadu_deframer(m);
+    bind_noaa_hrpt_decoder(m);    
+    bind_noaa_hrpt_deframer(m);    
+    bind_noaa_hrpt_pll_cf(m);    
+    bind_viterbi_fengyun_decoder(m);    
+    bind_viterbi_metop_decoder(m);    
     // ) END BINDING_FUNCTION_CALLS
 }
