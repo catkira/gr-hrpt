@@ -225,7 +225,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: ''
+    file: /mnt/d/noaa_img1
     type: short
     unbuffered: 'False'
     vlen: '1'
@@ -243,7 +243,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: ''
+    file: /mnt/d/noaa.raw
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
