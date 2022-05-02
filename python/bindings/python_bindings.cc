@@ -58,10 +58,10 @@ PYBIND11_MODULE(hrpt_python, m)
     // BINDING_FUNCTION_CALLS(
     bind_fengyun_diff_decoder_python(m);
     bind_metop_cadu_deframer_python(m);
-    noaa_hrpt_decoder_python(m);    
-    noaa_hrpt_deframer_python(m);    
-    noaa_hrpt_pll_cf_python(m);    
-    viterbi_fengyun_decoder_python(m);    
-    viterbi_metop_decoder_python(m);    
+    bind_noaa_hrpt_decoder_python(m);    
+    bind_noaa_hrpt_deframer_python(m);    
+    bind_noaa_hrpt_pll_cf_python(m);    
+    bind_viterbi_fengyun_decoder_python(m);    
+    bind_viterbi_metop_decoder_python(m);    
     // ) END BINDING_FUNCTION_CALLS
 }

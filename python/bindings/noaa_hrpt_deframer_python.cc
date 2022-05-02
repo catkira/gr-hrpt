@@ -30,7 +30,7 @@ namespace py = pybind11;
 void bind_noaa_hrpt_deframer(py::module& m)
 {
 
-    using noaa_deframer    = gr::hrpt::noaa_deframer;
+    using noaa_deframer    = gr::hrpt::noaa_hrpt_deframer;
 
 
     py::class_<noaa_deframer,

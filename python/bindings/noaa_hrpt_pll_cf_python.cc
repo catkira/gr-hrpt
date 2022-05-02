@@ -30,7 +30,7 @@ namespace py = pybind11;
 void bind_noaa_hrpt_pll_cf(py::module& m)
 {
 
-    using noaa_pll_cf    = gr::hrpt::noaa_pll_cf;
+    using noaa_pll_cf    = gr::hrpt::noaa_hrpt_pll_cf;
 
 
     py::class_<noaa_pll_cf,

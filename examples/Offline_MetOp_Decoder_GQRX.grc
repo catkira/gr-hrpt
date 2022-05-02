@@ -1,6 +1,7 @@
 options:
   parameters:
     author: MB/Aang23
+    catch_exceptions: 'True'
     category: '[GRC Hier Blocks]'
     cmake_opt: ''
     comment: ''
@@ -51,7 +52,7 @@ blocks:
     gui_hint: ''
     label: Clock Alpha
     min_len: '150'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: 1e-3
     step: 1e-5
@@ -96,7 +97,7 @@ blocks:
     gui_hint: ''
     label: PLL Alpha
     min_len: '150'
-    orient: Qt.Horizontal
+    orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0.00100'
     step: '0.00001'
@@ -302,7 +303,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [780.0, 48]
+    coordinate: [892.0, 64]
     rotation: 270
     state: enabled
 - name: digital_costas_loop_cc_0
@@ -912,6 +913,7 @@ blocks:
     minoutbuf: '0'
     name: '""'
     nconnections: '1'
+    norm_window: 'False'
     showports: 'False'
     tr_chan: '0'
     tr_level: '0.0'
@@ -930,7 +932,7 @@ blocks:
     width7: '1'
     width8: '1'
     width9: '1'
-    wintype: firdes.WIN_BLACKMAN_hARRIS
+    wintype: window.WIN_BLACKMAN_hARRIS
     ymax: '-40'
     ymin: '-60'
   states:
@@ -1122,3 +1124,4 @@ connections:
 
 metadata:
   file_format: 1
+  grc_version: v3.11.0.0git-128-gfa8953de

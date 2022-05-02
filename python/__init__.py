@@ -10,8 +10,8 @@
 This is the GNU Radio BLADERF module. Place your Python package
 description here (python/__init__.py).
 '''
-import os
 from __future__ import unicode_literals
+import os
 
 # import pybind11 generated symbols into the bladeRF namespace
 try:

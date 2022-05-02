@@ -30,7 +30,7 @@ namespace py = pybind11;
 void bind_noaa_hrpt_decoder(py::module& m)
 {
 
-    using noaa_decoder    = gr::hrpt::noaa_decoder;
+    using noaa_decoder    = gr::hrpt::noaa_hrpt_decoder;
 
 
     py::class_<noaa_decoder,
